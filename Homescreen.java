@@ -1,4 +1,5 @@
 
+package cmsc495finalproject;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JOptionPane;
@@ -26,6 +27,7 @@ public class Homescreen extends javax.swing.JFrame {
         createQuiz = new javax.swing.JMenuItem();
         showQuiz = new javax.swing.JMenuItem();
         close = new javax.swing.JMenuItem();
+        study = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Study Deck");
@@ -41,6 +43,14 @@ public class Homescreen extends javax.swing.JFrame {
             }
         });
         quizMenu.add(addDeck);
+        
+        study.setText("Start Study");
+        study.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startStudyActionPerformed(evt);
+            }
+        });
+        quizMenu.add(study);
 
         createQuiz.setText("Create Quiz");
         createQuiz.addActionListener(new java.awt.event.ActionListener() {
@@ -52,7 +62,7 @@ public class Homescreen extends javax.swing.JFrame {
 
         showQuiz.setText("Show Quiz");
         quizMenu.add(showQuiz);
-
+        
         close.setText("Close");
         close.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,13 +77,17 @@ public class Homescreen extends javax.swing.JFrame {
 
         pack();
     }
+    
+    private void startStudyActionPerformed(java.awt.event.ActionEvent evt) {
+        
+    }
 
     private void closeActionPerformed(java.awt.event.ActionEvent evt) {
         this.dispose();
     }
 
     private void createQuizActionPerformed(java.awt.event.ActionEvent evt) {
-        
+
     }
 
     private void addDeckActionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,13 +111,13 @@ public class Homescreen extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(QuizletFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Homescreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(QuizletFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Homescreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(QuizletFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Homescreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(QuizletFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Homescreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
         /* Create and display the form */
@@ -118,6 +132,7 @@ public class Homescreen extends javax.swing.JFrame {
     private javax.swing.JMenuItem addDeck;
     private javax.swing.JMenuItem close;
     private javax.swing.JMenuItem createQuiz;
+    private javax.swing.JMenuItem study;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu quizMenu;
     private javax.swing.JMenuItem showQuiz;
